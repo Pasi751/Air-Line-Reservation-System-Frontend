@@ -1,0 +1,173 @@
+<div class="card">
+    <div class="card-header">
+    </div>
+    <div class="card-body"> 
+        <!--<div class="card ">
+            <h4 class="card-header">Add Product Component</h4>
+            <div class="card-body">-->
+                <h2>Update Flight {{flight.flightNumber}}</h2>
+                <!--<h4>{{message}}</h4>-->
+                <form #productForm="ngForm" novalidate (ngSubmit) ="onSubmit()">
+                 
+                    <div class="form-group">
+                      <!--<div class="form-group col-md-4">
+                        <label>Flight Id</label>
+                        <input type="text" name="flightNumber" 
+                               required #flightNumber="ngModel" 
+                               class="form-control" 
+                               [class.is-invalid]="flightNumber.touched && flightNumber.invalid && !productForm.submitted"
+                               [(ngModel)]="flight.flightNumber">
+                        <small class="text-danger" [class.d-none]="flightNumber.valid || flightNumber.untouched || productForm.submitted">flight Id is required</small>
+                      </div>-->
+  
+                      <div class="form-group col-md-4">
+                        <label>Airline Name</label>
+                        <input type="text" name="flightAirLine" 
+                               required #flightAirLine="ngModel" 
+                               class="form-control" 
+                               [class.is-invalid]="flightAirLine.touched && flightAirLine.invalid && !productForm.submitted"
+                               [(ngModel)]="flight.flightAirLine">
+                        <small class="text-danger" [class.d-none]="flightAirLine.valid || flightAirLine.untouched || productForm.submitted">Flight name is required</small>
+                      </div>
+                    </div>
+                    
+                    
+                    <div class="row">
+  
+                      <div class="form-group col-md-4">
+                        <label>Departure Airport</label>
+                        <select class="form-control" required
+                                name="departureAirport"
+                                #departureAirport = "ngModel"
+                                [class.is-invalid]="departureAirport.invalid && departureAirport.touched && !productForm.submitted"
+                                [(ngModel)]="flight.departureAirport">
+                            <option >select Airport</option>
+                            <option >Sri Lanka</option>
+                            <option >Pakistan</option>
+                            <option >Nepal</option>
+                            <option >India</option>
+                            <option >Singapore</option>
+                        </select>
+                        <div *ngIf="departureAirport.invalid && departureAirport.touched && !productForm.submitted">
+                          <small class="text-danger">Airport is required</small>
+                        </div>
+                      </div>
+  
+                      <div class="form-group col-md-4">
+                        <label>Arrival Airport</label>
+                        <select class="form-control" required
+                                name="arrivalAirport"
+                                #arrivalAirport = "ngModel"
+                                [class.is-invalid]="arrivalAirport.invalid && arrivalAirport.touched && !productForm.submitted"
+                                [(ngModel)]="flight.arrivalAirport">
+                            <option>select Airport</option>
+                            <option>Sri Lanka</option>
+                            <option >Pakistan</option>
+                            <option >Nepal</option>
+                            <option >India</option>
+                            <option >Singapore</option>
+                        </select>
+                        <div *ngIf="arrivalAirport.invalid && arrivalAirport.touched && !productForm.submitted">
+                          <small class="text-danger">Airport is required</small>
+                        </div>
+                      </div>
+                    </div>   
+  
+  
+                      <!--<div class="form-group">
+                        
+                      </div> -->
+                    
+                    
+                    <!--
+                    <div class="form-group">
+                        <label>Product Brand</label>
+                        <input type="text" name="brand" 
+                               required #brand="ngModel" 
+                               class="form-control" 
+                               [class.is-invalid]="brand.touched && brand.invalid && !productForm.submitted"
+                               [(ngModel)]="product.brand">
+                        <small class="text-danger" [class.d-none]="brand.valid || brand.untouched || productForm.submitted">product brand is required</small>
+                    </div>
+        
+                    <div class="form-group">
+                        <label>Product Price</label>
+                        <input type="text" name="price" 
+                               required #price="ngModel" 
+                               class="form-control" 
+                               [class.is-invalid]="price.touched && price.invalid && !productForm.submitted"
+                               [(ngModel)]="product.price">
+                        <small class="text-danger" [class.d-none]="price.valid || price.untouched || productForm.submitted">product price is required</small>
+                    </div>
+                    -->
+        
+                  <div class="row">  
+                    <div class="form-group col-md-4">
+                        <label>Date of Departure</label>
+                        <input type="date" name="departureDate" 
+                               required #departureDate="ngModel" 
+                               class="form-control" 
+                               [class.is-invalid]="departureDate.touched && departureDate.invalid && !productForm.submitted"
+                               [(ngModel)]="flight.departureDate">
+                        <small class="text-danger" [class.d-none]="departureDate.valid || departureDate.untouched || productForm.submitted">Date of Departure is required</small>
+                    </div>
+  
+  
+                    <div class="form-group col-md-4">
+                      <label>Date of Arrival</label>
+                      <input type="date" name="arrivalDate" 
+                             required #arrivalDate="ngModel" 
+                             class="form-control" 
+                             [class.is-invalid]="arrivalDate.touched && arrivalDate.invalid && !productForm.submitted"
+                             [(ngModel)]="flight.arrivalDate">
+                      <small class="text-danger" [class.d-none]="arrivalDate.valid || arrivalDate.untouched || productForm.submitted">Date of Arrival is required</small>
+                    </div>
+                  </div>
+  
+                
+                <div class="row">
+                  <div class="form-group col-md-4">
+                    <label>Adult Ticket Price</label>
+                    <input type="text" name="adultsTicketPrice" 
+                           required #adultsTicketPrice="ngModel" 
+                           class="form-control" 
+                           [class.is-invalid]="adultsTicketPrice.touched && adultsTicketPrice.invalid && !productForm.submitted"
+                           [(ngModel)]="flight.adultsTicketPrice">
+                    <small class="text-danger" [class.d-none]="adultsTicketPrice.valid || adultsTicketPrice.untouched || productForm.submitted">Adult ticket price is required</small>
+                  </div>
+  
+  
+                <div class="form-group col-md-4">
+                  <label>Children Ticket Price</label>
+                  <input type="text" name="childrenTicketPrice" 
+                         required #childrenTicketPrice="ngModel" 
+                         class="form-control" 
+                         [class.is-invalid]="childrenTicketPrice.touched && childrenTicketPrice.invalid && !productForm.submitted"
+                         [(ngModel)]="flight.childrenTicketPrice">
+                  <small class="text-danger" [class.d-none]="childrenTicketPrice.valid || childrenTicketPrice.untouched || productForm.submitted">Child Ticket price is required</small>
+                </div>
+              </div>
+                    
+                  <!-- 
+                    <div class="form-group">
+                        <label>Time of Manufacture</label>
+                        <input type="time" name="timeOfManufacture" 
+                               required #timeOfManufacture="ngModel" 
+                               class="form-control" 
+                               [class.is-invalid]="timeOfManufacture.touched && timeOfManufacture.invalid && !productForm.submitted"
+                               [(ngModel)]="product.timeOfManufacture">
+                        <small class="text-danger" [class.d-none]="timeOfManufacture.valid || timeOfManufacture.untouched || productForm.submitted">Time of Manufacture is required</small>
+                    </div>
+                  -->
+                
+                <div class="row">
+                  <div class="col-md-4">
+                    <button class="btn btn-primary" type="submit"
+                    [disabled]="productForm.invalid" style ="margin-top: 10px">Update Details</button>
+                  </div>
+                </div>
+                </form>
+            <!--</div>
+        </div>-->
+    </div>
+  </div>

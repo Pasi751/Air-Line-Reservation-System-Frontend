@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <!-- <a class="navbar-brand" routerLink="/"><img src="./assets/ARS.png" alt="ARS" width="50px"></a> -->
+    <a class="navbar-brand" routerLink="/"><h4><span style="color: blue;"><i><b>ARS</b></i></span> Airlines</h4></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" routerLink="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/list">Flight Schedules</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/create-flight">Add flight</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/gallery">About Us</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" routerLink="/signup">Sign Up</a>
+        </li> -->
+
+        
+          <!-- <li style="float:right" class="nav-item" width="100%">
+            <a class="nav-link" routerLink="/signup">Sign Up</a>
+          </li> -->
+          <li id="login" style="float:right" class="nav-item" width="100%">
+            <a  class="nav-link" routerLink="/login">Login</a>
+          </li>
+
+      </ul>
+      
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>
